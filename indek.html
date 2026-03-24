@@ -1,0 +1,35 @@
+<!-- SALIN HTML ASLI ANDA + TAMBAHAN INI -->
+
+<!-- SEBELUM </head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiRGlzaXBsaW4gQW1hbmciLCJzaG9ydF9uYW1lIjoiRGlzaXBsaW4iLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBhMGEwZiIsInRoZW1lX2NvbG9yIjoiIzdjNmFmNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVhOaGJHVjBhVzl1SWl3aWJHOW5RV3d0ZDJsdVkyTmhkR1VpT2hOaVpXMWxkR1Z6...",InNpemVzIjoiMTkyeDE5MiIsInR5cGUiOiJpbWFnZS9wbmcifV19">
+
+<!-- SEBELUM </body> -->
+<div id="password-overlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0a0a0f;display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:20px;padding:20px;box-sizing:border-box">
+  <div style="font-family:'Syne',sans-serif;font-size:clamp(24px,5vw,36px);font-weight:800;color:#7c6af7;text-align:center;letter-spacing:-1px">DISIPLIN</div>
+  <div style="font-family:'DM Mono',monospace;font-size:12px;color:#6b6b88;text-align:center">Sistem Amang — Masukkan password</div>
+  <input type="password" id="pass-input" placeholder="Password pribadi..." 
+    style="background:#13131a;border:1px solid #2a2a3d;border-radius:8px;color:#e8e8f0;padding:14px 18px;font-size:15px;width:100%;max-width:320px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s">
+  <button onclick="checkPassword()" 
+    style="padding:12px 32px;background:#7c6af7;color:#fff;border:none;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;cursor:pointer;transition:all .2s;width:100%;max-width:320px">
+    🚀 Masuk ke Dashboard
+  </button>
+  <div style="font-size:11px;color:#6b6b88">Private • Offline-first • PWA Ready</div>
+</div>
+
+<script>
+const PASSWORD = 'passwordnyalupa'; // ❌ GANTI INI SEKARANG!
+
+function checkPassword() {
+  const input = document.getElementById('pass-input').value;
+  if (input === PASSWORD) {
+    document.getElementById('password-overlay').remove();
+    // Load data dari localStorage setelah login
+    loadState();
+  } else {
+    document.getElementById('pass-input').style.borderColor = '#f87171';
+    document.getElementById('pass-input').value = '';
+    setTimeout(() => document.getElementById('pass-input').style.borderColor = '#2a2a3d', 500);
+  }
+}
+</script>
