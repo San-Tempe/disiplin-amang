@@ -1,2 +1,1 @@
-# disiplin-amang
-disipline system
+
